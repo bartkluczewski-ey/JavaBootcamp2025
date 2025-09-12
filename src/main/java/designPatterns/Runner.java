@@ -58,6 +58,14 @@ public class Runner {
         paymentContext.setPaymentStrategy(new PayPalStrategy());
         paymentContext.pay(new BigDecimal("19.99"));
 
+        System.out.println("\n****************** FACADE ******************\n");
+
+        OrderFacade orderFacade = OrderFacade.getInstance();
+
+        orderFacade.placeOrder("Burger", "Big", "BBQ", false, new CreditCardStrategy(), "Beef 100%", "Cheddar cheese", "Beckon");
+
+        orderFacade.placeOrder("pizza","Big",null, true, new PayPalStrategy(), "Salami","Olives", "Cheese");
+
 
 
 

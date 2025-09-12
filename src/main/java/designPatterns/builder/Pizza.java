@@ -19,7 +19,11 @@ public class Pizza implements Meal {
 
     @Override
     public BigDecimal getPrice() {
-        return null;
+        BigDecimal price = new BigDecimal("35.50");
+        if(extraCheese){
+            price = price.add(new BigDecimal("5.00"));
+        }
+        return price;
     }
 
     private Pizza(Builder builder){
