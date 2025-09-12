@@ -1,3 +1,4 @@
+/*
 package lambda;
 
 import java.util.Arrays;
@@ -106,3 +107,4 @@ public class FunctionalInterfaces {
     }
 
 }
+*/

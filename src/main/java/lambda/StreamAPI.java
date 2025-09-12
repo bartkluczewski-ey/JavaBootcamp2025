@@ -1,3 +1,4 @@
+/*
 package lambda;
 
 import org.junit.Test;
@@ -132,9 +133,11 @@ public class StreamAPI {
         randomNumbers.forEach(System.out::println);
         System.out.println("----");
 //        randomNumbers.forEach(System.out::println);
-      /** Stream.generate() creates a stream of random numbers on demand.
+      */
+/** Stream.generate() creates a stream of random numbers on demand.
         The stream doesn't store these numbers — each one is generated when needed.
-        Once consumed (e.g., by forEach), the stream is gone and cannot be reused.*/
+        Once consumed (e.g., by forEach), the stream is gone and cannot be reused.*//*
+
     }
 
     @Test
@@ -167,3 +170,4 @@ public class StreamAPI {
                 .forEach(System.out::println);
     }
 }
+*/

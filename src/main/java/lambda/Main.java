@@ -1,3 +1,4 @@
+/*
 package lambda;
 
 import java.util.function.BiFunction;
@@ -20,3 +21,4 @@ public class Main {
         System.out.println("Sum of 10 and 20 is: " + sum);
     }
 }
+*/
