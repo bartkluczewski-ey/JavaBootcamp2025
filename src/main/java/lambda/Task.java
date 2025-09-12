@@ -8,16 +8,16 @@ import java.util.function.Predicate;
 
 public class Task {
     public static void main(String[] args) {
-        System.out.println("Task 1:");
+        System.out.println("\n\nTask 1:");
         ex1();
 
-        System.out.println("Task 2:");
+        System.out.println("\n\nTask 2:");
         ex2();
 
-        System.out.println("Task 3:");
+        System.out.println("\n\nTask 3:");
         ex3();
 
-        System.out.println("Task 4:");
+        System.out.println("\n\nTask 4:");
         ex4();
     }
 
@@ -73,7 +73,7 @@ public class Task {
                 .map(String::toUpperCase)
                 .toList();
 
-        System.out.println("Result list: "+names);
+        System.out.println("Result list: "+result);
     }
 
     public static void ex4(){
