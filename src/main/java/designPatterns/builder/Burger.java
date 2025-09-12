@@ -15,11 +15,13 @@ public class Burger implements Meal {
     @Override
     public void prepare() {
 
+        System.out.println("Creating burger: "+size+" with sauce "+sauceType);
+        System.out.println("Ingredients: "+ingredients);
     }
 
     @Override
     public BigDecimal getPrice() {
-        return null;
+        return new BigDecimal("25.99");
     }
 
     private Burger(Builder builder){
