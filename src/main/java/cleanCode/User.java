@@ -2,12 +2,12 @@ package cleanCode;
 
 import java.util.Objects;
 
-public class User {
+public final class User {
     private final String id;
-    private String name;
-    private String email;
-    private String phone;
-    private int age;
+    private final String name;
+    private final String email;
+    private final String phone;
+    private final int age;
 
     public User(String id, String name, String email, String phone, int age) {
         this.id = id;
@@ -37,35 +37,16 @@ public class User {
         return this.age;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
 
     public String toString() {
         return "User{id='" + this.id + "', name='" + this.name + "', email='" + this.email + "', age=" + this.age + "}";
     }
 
     public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        } else if (o != null && this.getClass() == o.getClass()) {
-            User user = (User)o;
-            return Objects.equals(this.id, user.id);
-        } else {
-            return false;
-        }
+        if (this == o) return true;
+        if (o == null && this.getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return Objects.equals(id, user.id);
     }
 
     public int hashCode() {
