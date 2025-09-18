@@ -17,14 +17,28 @@ public class ConsoleHandler {
             String email = scanner.nextLine();
             System.out.println("Enter phone number:");
             String phone = scanner.nextLine();
-            System.out.println("Enter user age:");
-            int age = scanner.nextInt();
+
+            int age = readUserAge(scanner);
 
             try {
                 this.userService.registerUser(name, email, phone, age);
                 System.out.println("User processed successfully");
             } catch (IllegalArgumentException e) {
                 System.err.println("Error: " + e.getMessage());
+            }
+        }
+
+    }
+
+    private int readUserAge(Scanner scanner) {
+
+        while(true){
+            try{
+                System.out.println("Enter user age:");
+                String ageInput = scanner.nextLine();
+                return Integer.parseInt(ageInput);
+            }catch (NumberFormatException e){
+                System.err.println("Invalid age format. Please enter a number.");
             }
         }
 

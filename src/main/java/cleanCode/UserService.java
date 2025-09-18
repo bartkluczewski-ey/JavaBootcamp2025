@@ -17,12 +17,13 @@ public class UserService {
     }
 
     public User registerUser(String name, String email, String phone, int age) {
-        this.userValidator.validate(name, email, phone, age);
+        userValidator.validate(name, email, phone, age);
         String userId = UUID.randomUUID().toString();
         User user = new User(userId, name, email, phone, age);
-        this.userRepository.save(user);
-        this.loggingService.log("User Created: " + user);
-        this.notificationService.sendWelcomeNotification(user);
+        userRepository.save(user);
+        loggingService.log("User Created: " + user);
+        notificationService.sendWelcomeNotification(user);
+
         return user;
     }
 }

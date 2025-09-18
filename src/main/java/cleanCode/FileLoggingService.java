@@ -15,8 +15,8 @@ public class FileLoggingService implements LoggingService {
 
     public void log(String message) {
         try (PrintWriter writer = new PrintWriter(new FileWriter(this.logFileName, true))) {
-            LocalDateTime var10001 = LocalDateTime.now();
-            writer.println(var10001 + ": " + message);
+            LocalDateTime timestamp = LocalDateTime.now();
+            writer.println(timestamp + ": " + message);
         } catch (IOException e) {
             System.err.println("Could not write to log file: " + e.getMessage());
         }
