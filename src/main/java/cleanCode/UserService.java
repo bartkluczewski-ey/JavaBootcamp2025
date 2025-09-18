@@ -1,0 +1,28 @@
+
+package cleanCode;
+
+import java.util.UUID;
+
+public class UserService {
+    private final UserRepository userRepository;
+    private final NotificationService notificationService;
+    private final LoggingService loggingService;
+    private final UserValidator userValidator;
+
+    public UserService(UserRepository userRepository, NotificationService notificationService, LoggingService loggingService, UserValidator userValidator) {
+        this.userRepository = userRepository;
+        this.notificationService = notificationService;
+        this.loggingService = loggingService;
+        this.userValidator = userValidator;
+    }
+
+    public User registerUser(String name, String email, String phone, int age) {
+        this.userValidator.validate(name, email, phone, age);
+        String userId = UUID.randomUUID().toString();
+        User user = new User(userId, name, email, phone, age);
+        this.userRepository.save(user);
+        this.loggingService.log("User Created: " + user);
+        this.notificationService.sendWelcomeNotification(user);
+        return user;
+    }
+}
